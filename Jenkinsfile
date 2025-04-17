@@ -12,5 +12,10 @@ pipeline {
                 sh '. venv/bin/activate && pytest tests/'
             }
         }
+        stage('UI Test') {
+            steps {
+                sh '. venv/bin/activate && python tests/test_ui.py'
+            }
+        }
     }
 }
